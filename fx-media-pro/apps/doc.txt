@@ -1,0 +1,1124 @@
+FX Media Pro - Complete Project Structure
+fx-media-pro/
+├── apps/
+│   ├── desktop/                                    # Electron Desktop App
+│   │   ├── public/
+│   │   │   ├── icons/
+│   │   │   │   ├── icon.icns
+│   │   │   │   ├── icon.ico
+│   │   │   │   └── icon.png
+│   │   │   └── locales/
+│   │   │       ├── en.json
+│   │   │       └── es.json
+│   │   ├── src/
+│   │   │   ├── main/                             # Electron Main Process
+│   │   │   │   ├── handlers/
+│   │   │   │   │   ├── file-handler.ts
+│   │   │   │   │   ├── media-handler.ts
+│   │   │   │   │   ├── dialog-handler.ts
+│   │   │   │   │   └── window-handler.ts
+│   │   │   │   ├── services/
+│   │   │   │   │   ├── auto-updater.ts
+│   │   │   │   │   ├── file-watcher.ts
+│   │   │   │   │   ├── menu-builder.ts
+│   │   │   │   │   ├── native-player.ts
+│   │   │   │   │   ├── shortcuts.ts
+│   │   │   │   │   └── tray-manager.ts
+│   │   │   │   ├── utils/
+│   │   │   │   │   ├── logger.ts
+│   │   │   │   │   └── platform.ts
+│   │   │   │   ├── config.ts
+│   │   │   │   ├── ipc-channels.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   └── window-manager.ts
+│   │   │   │
+│   │   │   ├── preload/
+│   │   │   │   ├── types.d.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   └── renderer/                         # React Application
+│   │   │       ├── public/
+│   │   │       │   ├── favicon.ico
+│   │   │       │   └── robots.txt
+│   │   │       │
+│   │   │       ├── src/
+│   │   │       │   ├── assets/
+│   │   │       │   │   ├── fonts/
+│   │   │       │   │   │   ├── Inter/
+│   │   │       │   │   │   └── Roboto/
+│   │   │       │   │   ├── icons/
+│   │   │       │   │   │   ├── svg/
+│   │   │       │   │   │   └── png/
+│   │   │       │   │   ├── images/
+│   │   │       │   │   │   ├── backgrounds/
+│   │   │       │   │   │   ├── placeholders/
+│   │   │       │   │   │   └── splash/
+│   │   │       │   │   └── animations/
+│   │   │       │   │       └── lottie/
+│   │   │       │   │
+│   │   │       │   ├── components/
+│   │   │       │   │   ├── audio/
+│   │   │       │   │   │   ├── player/
+│   │   │       │   │   │   │   ├── AudioPlayer.tsx
+│   │   │       │   │   │   │   ├── MiniPlayer.tsx
+│   │   │       │   │   │   │   ├── NowPlaying.tsx
+│   │   │       │   │   │   │   └── PlayerControls.tsx
+│   │   │       │   │   │   ├── effects/
+│   │   │       │   │   │   │   ├── Equalizer.tsx
+│   │   │       │   │   │   │   ├── Reverb.tsx
+│   │   │       │   │   │   │   ├── Compressor.tsx
+│   │   │       │   │   │   │   ├── Echo.tsx
+│   │   │       │   │   │   │   └── EffectsChain.tsx
+│   │   │       │   │   │   ├── visualizer/
+│   │   │       │   │   │   │   ├── Waveform.tsx
+│   │   │       │   │   │   │   ├── Spectrum.tsx
+│   │   │       │   │   │   │   ├── Bars.tsx
+│   │   │       │   │   │   │   ├── Circle.tsx
+│   │   │       │   │   │   │   ├── Particles.tsx
+│   │   │       │   │   │   │   └── VinylDisc.tsx
+│   │   │       │   │   │   ├── VolumeControl.tsx
+│   │   │       │   │   │   ├── AudioMeter.tsx
+│   │   │       │   │   │   ├── PitchControl.tsx
+│   │   │       │   │   │   └── SpeedControl.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── video/
+│   │   │       │   │   │   ├── player/
+│   │   │       │   │   │   │   ├── VideoPlayer.tsx
+│   │   │       │   │   │   │   ├── VideoControls.tsx
+│   │   │       │   │   │   │   ├── VideoTimeline.tsx
+│   │   │       │   │   │   │   ├── PlaybackSpeed.tsx
+│   │   │       │   │   │   │   ├── QualitySelector.tsx
+│   │   │       │   │   │   │   └── SubtitlePanel.tsx
+│   │   │       │   │   │   ├── editor/
+│   │   │       │   │   │   │   ├── Timeline.tsx
+│   │   │       │   │   │   │   ├── TrackLayer.tsx
+│   │   │       │   │   │   │   ├── Trimmer.tsx
+│   │   │       │   │   │   │   ├── Splicer.tsx
+│   │   │       │   │   │   │   └── Keyframes.tsx
+│   │   │       │   │   │   ├── effects/
+│   │   │       │   │   │   │   ├── ColorGrading.tsx
+│   │   │       │   │   │   │   ├── Filters.tsx
+│   │   │       │   │   │   │   ├── Transitions.tsx
+│   │   │       │   │   │   │   ├── Overlays.tsx
+│   │   │       │   │   │   │   └── GreenScreen.tsx
+│   │   │       │   │   │   ├── Thumbnail.tsx
+│   │   │       │   │   │   ├── AspectRatio.tsx
+│   │   │       │   │   │   └── FrameByFrame.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── library/
+│   │   │       │   │   │   ├── MediaGrid.tsx
+│   │   │       │   │   │   ├── MediaList.tsx
+│   │   │       │   │   │   ├── MediaCard.tsx
+│   │   │       │   │   │   ├── AlbumView.tsx
+│   │   │       │   │   │   ├── ArtistView.tsx
+│   │   │       │   │   │   ├── GenreView.tsx
+│   │   │       │   │   │   ├── FolderView.tsx
+│   │   │       │   │   │   ├── RecentlyPlayed.tsx
+│   │   │       │   │   │   ├── Favorites.tsx
+│   │   │       │   │   │   ├── ImportMedia.tsx
+│   │   │       │   │   │   ├── ScanFolders.tsx
+│   │   │       │   │   │   └── LibraryStats.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── playlist/
+│   │   │       │   │   │   ├── PlaylistGrid.tsx
+│   │   │       │   │   │   ├── PlaylistCard.tsx
+│   │   │       │   │   │   ├── PlaylistEditor.tsx
+│   │   │       │   │   │   ├── PlaylistView.tsx
+│   │   │       │   │   │   ├── QueueManager.tsx
+│   │   │       │   │   │   ├── SmartPlaylist.tsx
+│   │   │       │   │   │   └── PlaylistImport.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── studio/
+│   │   │       │   │   │   ├── mixing/
+│   │   │       │   │   │   │   ├── MixingConsole.tsx
+│   │   │       │   │   │   │   ├── ChannelStrip.tsx
+│   │   │       │   │   │   │   ├── Fader.tsx
+│   │   │       │   │   │   │   ├── Pan.tsx
+│   │   │       │   │   │   │   ├── Send.tsx
+│   │   │       │   │   │   │   └── MasterBus.tsx
+│   │   │       │   │   │   ├── recording/
+│   │   │       │   │   │   │   ├── RecordingPanel.tsx
+│   │   │       │   │   │   │   ├── InputSelector.tsx
+│   │   │       │   │   │   │   ├── RecordingTimer.tsx
+│   │   │       │   │   │   │   └── Metronome.tsx
+│   │   │       │   │   │   ├── editing/
+│   │   │       │   │   │   │   ├── MultiTrackEditor.tsx
+│   │   │       │   │   │   │   ├── TrackEditor.tsx
+│   │   │       │   │   │   │   ├── RegionEditor.tsx
+│   │   │       │   │   │   │   ├── AudioClip.tsx
+│   │   │       │   │   │   │   └── Automation.tsx
+│   │   │       │   │   │   ├── EffectsRack.tsx
+│   │   │       │   │   │   ├── VirtualInstruments.tsx
+│   │   │       │   │   │   └── PluginBrowser.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── metadata/
+│   │   │       │   │   │   ├── MetadataEditor.tsx
+│   │   │       │   │   │   ├── TagEditor.tsx
+│   │   │       │   │   │   ├── AlbumArt.tsx
+│   │   │       │   │   │   ├── LyricsEditor.tsx
+│   │   │       │   │   │   ├── BatchEditor.tsx
+│   │   │       │   │   │   └── AutoTagger.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── search/
+│   │   │       │   │   │   ├── SearchBar.tsx
+│   │   │       │   │   │   ├── SearchResults.tsx
+│   │   │       │   │   │   ├── AdvancedSearch.tsx
+│   │   │       │   │   │   ├── SearchFilters.tsx
+│   │   │       │   │   │   └── SearchHistory.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── export/
+│   │   │       │   │   │   ├── ExportDialog.tsx
+│   │   │       │   │   │   ├── FormatSelector.tsx
+│   │   │       │   │   │   ├── QualitySettings.tsx
+│   │   │       │   │   │   ├── ExportProgress.tsx
+│   │   │       │   │   │   └── BatchExport.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── layout/
+│   │   │       │   │   │   ├── Header/
+│   │   │       │   │   │   │   ├── Header.tsx
+│   │   │       │   │   │   │   ├── NavigationMenu.tsx
+│   │   │       │   │   │   │   ├── UserMenu.tsx
+│   │   │       │   │   │   │   └── SearchBox.tsx
+│   │   │       │   │   │   ├── Sidebar/
+│   │   │       │   │   │   │   ├── Sidebar.tsx
+│   │   │       │   │   │   │   ├── Navigation.tsx
+│   │   │       │   │   │   │   ├── PlaylistSection.tsx
+│   │   │       │   │   │   │   └── LibrarySection.tsx
+│   │   │       │   │   │   ├── Footer/
+│   │   │       │   │   │   │   ├── Footer.tsx
+│   │   │       │   │   │   │   ├── PlayerBar.tsx
+│   │   │       │   │   │   │   └── StatusBar.tsx
+│   │   │       │   │   │   ├── Layout.tsx
+│   │   │       │   │   │   ├── MainContent.tsx
+│   │   │       │   │   │   └── SplitPane.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── settings/
+│   │   │       │   │   │   ├── SettingsPanel.tsx
+│   │   │       │   │   │   ├── GeneralSettings.tsx
+│   │   │       │   │   │   ├── AudioSettings.tsx
+│   │   │       │   │   │   ├── VideoSettings.tsx
+│   │   │       │   │   │   ├── LibrarySettings.tsx
+│   │   │       │   │   │   ├── PlaybackSettings.tsx
+│   │   │       │   │   │   ├── InterfaceSettings.tsx
+│   │   │       │   │   │   ├── ShortcutSettings.tsx
+│   │   │       │   │   │   ├── PluginSettings.tsx
+│   │   │       │   │   │   ├── PrivacySettings.tsx
+│   │   │       │   │   │   └── AdvancedSettings.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── common/
+│   │   │       │   │   │   ├── Button/
+│   │   │       │   │   │   │   ├── Button.tsx
+│   │   │       │   │   │   │   ├── IconButton.tsx
+│   │   │       │   │   │   │   ├── ToggleButton.tsx
+│   │   │       │   │   │   │   └── ButtonGroup.tsx
+│   │   │       │   │   │   ├── Input/
+│   │   │       │   │   │   │   ├── Input.tsx
+│   │   │       │   │   │   │   ├── TextArea.tsx
+│   │   │       │   │   │   │   ├── Select.tsx
+│   │   │       │   │   │   │   ├── Checkbox.tsx
+│   │   │       │   │   │   │   ├── Radio.tsx
+│   │   │       │   │   │   │   ├── Switch.tsx
+│   │   │       │   │   │   │   └── Slider.tsx
+│   │   │       │   │   │   ├── Modal/
+│   │   │       │   │   │   │   ├── Modal.tsx
+│   │   │       │   │   │   │   ├── Dialog.tsx
+│   │   │       │   │   │   │   ├── Drawer.tsx
+│   │   │       │   │   │   │   └── BottomSheet.tsx
+│   │   │       │   │   │   ├── Feedback/
+│   │   │       │   │   │   │   ├── Toast.tsx
+│   │   │       │   │   │   │   ├── Alert.tsx
+│   │   │       │   │   │   │   ├── Notification.tsx
+│   │   │       │   │   │   │   ├── Progress.tsx
+│   │   │       │   │   │   │   ├── Spinner.tsx
+│   │   │       │   │   │   │   └── Skeleton.tsx
+│   │   │       │   │   │   ├── Navigation/
+│   │   │       │   │   │   │   ├── Tabs.tsx
+│   │   │       │   │   │   │   ├── Breadcrumb.tsx
+│   │   │       │   │   │   │   ├── Pagination.tsx
+│   │   │       │   │   │   │   └── Stepper.tsx
+│   │   │       │   │   │   ├── Display/
+│   │   │       │   │   │   │   ├── Card.tsx
+│   │   │       │   │   │   │   ├── Badge.tsx
+│   │   │       │   │   │   │   ├── Avatar.tsx
+│   │   │       │   │   │   │   ├── Chip.tsx
+│   │   │       │   │   │   │   ├── Divider.tsx
+│   │   │       │   │   │   │   ├── Tooltip.tsx
+│   │   │       │   │   │   │   └── Popover.tsx
+│   │   │       │   │   │   ├── Menu/
+│   │   │       │   │   │   │   ├── Menu.tsx
+│   │   │       │   │   │   │   ├── MenuItem.tsx
+│   │   │       │   │   │   │   ├── Dropdown.tsx
+│   │   │       │   │   │   │   └── ContextMenu.tsx
+│   │   │       │   │   │   ├── Table/
+│   │   │       │   │   │   │   ├── Table.tsx
+│   │   │       │   │   │   │   ├── DataGrid.tsx
+│   │   │       │   │   │   │   └── VirtualList.tsx
+│   │   │       │   │   │   ├── Form/
+│   │   │       │   │   │   │   ├── Form.tsx
+│   │   │       │   │   │   │   ├── FormField.tsx
+│   │   │       │   │   │   │   └── FormGroup.tsx
+│   │   │       │   │   │   ├── Drag/
+│   │   │       │   │   │   │   ├── Draggable.tsx
+│   │   │       │   │   │   │   ├── Droppable.tsx
+│   │   │       │   │   │   │   └── SortableList.tsx
+│   │   │       │   │   │   ├── Icon.tsx
+│   │   │       │   │   │   ├── Image.tsx
+│   │   │       │   │   │   ├── EmptyState.tsx
+│   │   │       │   │   │   ├── ErrorBoundary.tsx
+│   │   │       │   │   │   └── Portal.tsx
+│   │   │       │   │   │
+│   │   │       │   │   └── widgets/
+│   │   │       │   │       ├── Clock.tsx
+│   │   │       │   │       ├── DatePicker.tsx
+│   │   │       │   │       ├── ColorPicker.tsx
+│   │   │       │   │       ├── FilePicker.tsx
+│   │   │       │   │       ├── RichTextEditor.tsx
+│   │   │       │   │       └── CodeEditor.tsx
+│   │   │       │   │
+│   │   │       │   ├── features/
+│   │   │       │   │   ├── player/
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   │   ├── PlayerInterface.tsx
+│   │   │       │   │   │   │   ├── PlaybackControls.tsx
+│   │   │       │   │   │   │   └── MediaInfo.tsx
+│   │   │       │   │   │   ├── hooks/
+│   │   │       │   │   │   │   ├── usePlayer.ts
+│   │   │       │   │   │   │   ├── usePlayback.ts
+│   │   │       │   │   │   │   ├── useQueue.ts
+│   │   │       │   │   │   │   └── useMediaSession.ts
+│   │   │       │   │   │   ├── services/
+│   │   │       │   │   │   │   ├── PlayerService.ts
+│   │   │       │   │   │   │   └── QueueService.ts
+│   │   │       │   │   │   ├── utils/
+│   │   │       │   │   │   │   ├── formatTime.ts
+│   │   │       │   │   │   │   └── parseMetadata.ts
+│   │   │       │   │   │   ├── types.ts
+│   │   │       │   │   │   └── index.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── studio/
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   ├── hooks/
+│   │   │       │   │   │   │   ├── useAudioEngine.ts
+│   │   │       │   │   │   │   ├── useRecording.ts
+│   │   │       │   │   │   │   └── useMixer.ts
+│   │   │       │   │   │   ├── services/
+│   │   │       │   │   │   │   ├── AudioEngine.ts
+│   │   │       │   │   │   │   ├── RecordingService.ts
+│   │   │       │   │   │   │   └── MixerService.ts
+│   │   │       │   │   │   └── index.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── library/
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   ├── hooks/
+│   │   │       │   │   │   │   ├── useLibrary.ts
+│   │   │       │   │   │   │   ├── useMediaScanner.ts
+│   │   │       │   │   │   │   └── useMediaImport.ts
+│   │   │       │   │   │   ├── services/
+│   │   │       │   │   │   │   ├── LibraryService.ts
+│   │   │       │   │   │   │   ├── ScannerService.ts
+│   │   │       │   │   │   │   └── ImportService.ts
+│   │   │       │   │   │   └── index.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── playlist/
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   ├── hooks/
+│   │   │       │   │   │   │   └── usePlaylist.ts
+│   │   │       │   │   │   ├── services/
+│   │   │       │   │   │   │   └── PlaylistService.ts
+│   │   │       │   │   │   └── index.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── search/
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   ├── hooks/
+│   │   │       │   │   │   │   └── useSearch.ts
+│   │   │       │   │   │   ├── services/
+│   │   │       │   │   │   │   └── SearchService.ts
+│   │   │       │   │   │   └── index.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── settings/
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   ├── hooks/
+│   │   │       │   │   │   │   └── useSettings.ts
+│   │   │       │   │   │   └── index.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── effects/
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   ├── hooks/
+│   │   │       │   │   │   │   └── useEffects.ts
+│   │   │       │   │   │   ├── processors/
+│   │   │       │   │   │   │   ├── equalizer.ts
+│   │   │       │   │   │   │   ├── reverb.ts
+│   │   │       │   │   │   │   ├── delay.ts
+│   │   │       │   │   │   │   └── compressor.ts
+│   │   │       │   │   │   └── index.tsx
+│   │   │       │   │   │
+│   │   │       │   │   ├── visualization/
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   ├── hooks/
+│   │   │       │   │   │   │   └── useVisualizer.ts
+│   │   │       │   │   │   ├── renderers/
+│   │   │       │   │   │   │   ├── canvas-renderer.ts
+│   │   │       │   │   │   │   └── webgl-renderer.ts
+│   │   │       │   │   │   └── index.tsx
+│   │   │       │   │   │
+│   │   │       │   │   └── shortcuts/
+│   │   │       │   │       ├── components/
+│   │   │       │   │       ├── hooks/
+│   │   │       │   │       │   └── useShortcuts.ts
+│   │   │       │   │       ├── ShortcutManager.ts
+│   │   │       │   │       └── index.tsx
+│   │   │       │   │
+│   │   │       │   ├── hooks/
+│   │   │       │   │   ├── media/
+│   │   │       │   │   │   ├── useAudio.ts
+│   │   │       │   │   │   ├── useVideo.ts
+│   │   │       │   │   │   ├── useMediaPlayer.ts
+│   │   │       │   │   │   └── useMediaControls.ts
+│   │   │       │   │   ├── ui/
+│   │   │       │   │   │   ├── useTheme.ts
+│   │   │       │   │   │   ├── useMediaQuery.ts
+│   │   │       │   │   │   ├── useModal.ts
+│   │   │       │   │   │   ├── useToast.ts
+│   │   │       │   │   │   ├── useDarkMode.ts
+│   │   │       │   │   │   └── useKeyboard.ts
+│   │   │       │   │   ├── data/
+│   │   │       │   │   │   ├── useLocalStorage.ts
+│   │   │       │   │   │   ├── useIndexedDB.ts
+│   │   │       │   │   │   └── useCache.ts
+│   │   │       │   │   ├── utils/
+│   │   │       │   │   │   ├── useDebounce.ts
+│   │   │       │   │   │   ├── useThrottle.ts
+│   │   │       │   │   │   ├── useInterval.ts
+│   │   │       │   │   │   ├── useTimeout.ts
+│   │   │       │   │   │   ├── usePrevious.ts
+│   │   │       │   │   │   ├── useMount.ts
+│   │   │       │   │   │   ├── useUnmount.ts
+│   │   │       │   │   │   └── useEventListener.ts
+│   │   │       │   │   └── index.ts
+│   │   │       │   │
+│   │   │       │   ├── layouts/
+│   │   │       │   │   ├── MainLayout/
+│   │   │       │   │   │   ├── MainLayout.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── StudioLayout/
+│   │   │       │   │   │   ├── StudioLayout.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── MinimalLayout/
+│   │   │       │   │   │   ├── MinimalLayout.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── FullscreenLayout/
+│   │   │       │   │   │   ├── FullscreenLayout.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   └── index.ts
+│   │   │       │   │
+│   │   │       │   ├── pages/
+│   │   │       │   │   ├── Home/
+│   │   │       │   │   │   ├── Home.tsx
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   │   ├── FeaturedSection.tsx
+│   │   │       │   │   │   │   ├── RecentlyPlayed.tsx
+│   │   │       │   │   │   │   └── QuickAccess.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── Player/
+│   │   │       │   │   │   ├── Player.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── Studio/
+│   │   │       │   │   │   ├── Studio.tsx
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── Library/
+│   │   │       │   │   │   ├── Library.tsx
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   │   ├── Sidebar.tsx
+│   │   │       │   │   │   │   └── Content.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── Playlists/
+│   │   │       │   │   │   ├── Playlists.tsx
+│   │   │       │   │   │   ├── PlaylistDetail.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── Albums/
+│   │   │       │   │   │   ├── Albums.tsx
+│   │   │       │   │   │   ├── AlbumDetail.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── Artists/
+│   │   │       │   │   │   ├── Artists.tsx
+│   │   │       │   │   │   ├── ArtistDetail.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── Search/
+│   │   │       │   │   │   ├── Search.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   ├── Settings/
+│   │   │       │   │   │   ├── Settings.tsx
+│   │   │       │   │   │   └── index.ts
+│   │   │       │   │   └── NotFound/
+│   │   │       │   │       ├── NotFound.tsx
+│   │   │       │   │       └── index.ts
+│   │   │       │   │
+│   │   │       │   ├── routes/
+│   │   │       │   │   ├── index.tsx
+│   │   │       │   │   ├── PrivateRoute.tsx
+│   │   │       │   │   └── routes.config.ts
+│   │   │       │   │
+│   │   │       │   ├── services/
+│   │   │       │   │   ├── api/
+│   │   │       │   │   │   ├── client.ts
+│   │   │       │   │   │   ├── endpoints.ts
+│   │   │       │   │   │   ├── interceptors.ts
+│   │   │       │   │   │   └── types.ts
+│   │   │       │   │   ├── audio/
+│   │   │       │   │   │   ├── AudioContext.ts
+│   │   │       │   │   │   ├── AudioEngine.ts
+│   │   │       │   │   │   ├── AudioProcessor.ts
+│   │   │       │   │   │   ├── AudioAnalyzer.ts
+│   │   │       │   │   │   ├── EffectsChain.ts
+│   │   │       │   │   │   ├── AudioDecoder.ts
+│   │   │       │   │   │   ├── AudioEncoder.ts
+│   │   │       │   │   │   └── BufferManager.ts
+│   │   │       │   │   ├── video/
+│   │   │       │   │   │   ├── VideoPlayer.ts
+│   │   │       │   │   │   ├── VideoProcessor.ts
+│   │   │       │   │   │   ├── VideoEncoder.ts
+│   │   │       │   │   │   ├── VideoDecoder.ts
+│   │   │       │   │   │   ├── FrameExtractor.ts
+│   │   │       │   │   │   └── SubtitleParser.ts
+│   │   │       │   │   ├── file/
+│   │   │       │   │   │   ├── FileService.ts
+│   │   │       │   │   │   ├── FileReader.ts
+│   │   │       │   │   │   ├── FileWriter.ts
+│   │   │       │   │   │   └── FileValidator.ts
+│   │   │       │   │   ├── database/
+│   │   │       │   │   │   ├── IndexedDBService.ts
+│   │   │       │   │   │   ├── migrations.ts
+│   │   │       │   │   │   └── schema.ts
+│   │   │       │   │   ├── metadata/
+│   │   │       │   │   │   ├── MetadataParser.ts
+│   │   │       │   │   │   ├── MetadataWriter.ts
+│   │   │       │   │   │   ├── AlbumArtExtractor.ts
+│   │   │       │   │   │   └── LyricsProvider.ts
+│   │   │       │   │   ├── sync/
+│   │   │       │   │   │   ├── SyncService.ts
+│   │   │       │   │   │   └── CloudStorage.ts
+│   │   │       │   │   ├── ipc/
+│   │   │       │   │   │   ├── IPCService.ts
+│   │   │       │   │   │   └── channels.ts
+│   │   │       │   │   ├── analytics/
+│   │   │       │   │   │   ├── AnalyticsService.ts
+│   │   │       │   │   │   └── events.ts
+│   │   │       │   │   └── logger/
+│   │   │       │   │       ├── Logger.ts
+│   │   │       │   │       └── transports.ts
+│   │   │       │   │
+│   │   │       │   ├── store/
+│   │   │       │   │   ├── slices/
+│   │   │       │   │   │   ├── player/
+│   │   │       │   │   │   │   ├── playerSlice.ts
+│   │   │       │   │   │   │   ├── queueSlice.ts
+│   │   │       │   │   │   │   └── playbackSlice.ts
+│   │   │       │   │   │   ├── audio/
+│   │   │       │   │   │   │   ├── audioSlice.ts
+│   │   │       │   │   │   │   ├── effectsSlice.ts
+│   │   │       │   │   │   │   └── visualizerSlice.ts
+│   │   │       │   │   │   ├── video/
+│   │   │       │   │   │   │   ├── videoSlice.ts
+│   │   │       │   │   │   │   └── editorSlice.ts
+│   │   │       │   │   │   ├── library/
+│   │   │       │   │   │   │   ├── librarySlice.ts
+│   │   │       │   │   │   │   ├── albumsSlice.ts
+│   │   │       │   │   │   │   ├── artistsSlice.ts
+│   │   │       │   │   │   │   └── genresSlice.ts
+│   │   │       │   │   │   ├── playlist/
+│   │   │       │   │   │   │   └── playlistSlice.ts
+│   │   │       │   │   │   ├── ui/
+│   │   │       │   │   │   │   ├── uiSlice.ts
+│   │   │       │   │   │   │   ├── themeSlice.ts
+│   │   │       │   │   │   │   ├── modalSlice.ts
+│   │   │       │   │   │   │   └── toastSlice.ts
+│   │   │       │   │   │   ├── settings/
+│   │   │       │   │   │   │   └── settingsSlice.ts
+│   │   │       │   │   │   └── user/
+│   │   │       │   │   │       └── userSlice.ts
+│   │   │       │   │   ├── middleware/
+│   │   │       │   │   │   ├── logger.ts
+│   │   │       │   │   │   ├── persist.ts
+│   │   │       │   │   │   └── sync.ts
+│   │   │       │   │   ├── selectors/
+│   │   │       │   │   │   ├── player.selectors.ts
+│   │   │       │   │   │   ├── library.selectors.ts
+│   │   │       │   │   │   └── ui.selectors.ts
+│   │   │       │   │   ├── hooks.ts
+│   │   │       │   │   ├── index.ts
+│   │   │       │   │   └── store.ts
+│   │   │       │   │
+│   │   │       │   ├── styles/
+│   │   │       │   │   ├── abstracts/
+│   │   │       │   │   │   ├── _variables.scss
+│   │   │       │   │   │   ├── _mixins.scss
+│   │   │       │   │   │   └── _functions.scss
+│   │   │       │   │   ├── base/
+│   │   │       │   │   │   ├── _reset.scss
+│   │   │       │   │   │   ├── _typography.scss
+│   │   │       │   │   │   └── _animations.scss
+│   │   │       │   │   ├── components/
+│   │   │       │   │   │   ├── _buttons.scss
+│   │   │       │   │   │   ├── _cards.scss
+│   │   │       │   │   │   ├── _modals.scss
+│   │   │       │   │   │   └── _forms.scss
+│   │   │       │   │   ├── layouts/
+│   │   │       │   │   │   ├── _header.scss
+│   │   │       │   │   │   ├── _sidebar.scss
+│   │   │       │   │   │   └── _footer.scss
+│   │   │       │   │   ├── themes/
+│   │   │       │   │   │   ├── dark/
+│   │   │       │   │   │   │   ├── _colors.scss
+│   │   │       │   │   │   │   └── dark.scss
+│   │   │       │   │   │   ├── light/
+│   │   │       │   │   │   │   ├── _colors.scss
+│   │   │       │   │   │   │   └── light.scss
+│   │   │       │   │   │   ├── custom/
+│   │   │       │   │   │   │   ├── spotify.scss
+│   │   │       │   │   │   │   └── youtube.scss
+│   │   │       │   │   │   └── _themes.scss
+│   │   │       │   │   ├── utilities/
+│   │   │       │   │   │   ├── _helpers.scss
+│   │   │       │   │   │   └── _utilities.scss
+│   │   │       │   │   ├── globals.css
+│   │   │       │   │   ├── main.scss
+│   │   │       │   │   └── tailwind.css
+│   │   │       │   │
+│   │   │       │   ├── types/
+│   │   │       │   │   ├── models/
+│   │   │       │   │   │   ├── media.types.ts
+│   │   │       │   │   │   ├── playlist.types.ts
+│   │   │       │   │   │   ├── album.types.ts
+│   │   │       │   │   │   ├── artist.types.ts
+│   │   │       │   │   │   ├── track.types.ts
+│   │   │       │   │   │   └── user.types.ts
+│   │   │       │   │   ├── api/
+│   │   │       │   │   │   ├── request.types.ts
+│   │   │       │   │   │   └── response.types.ts
+│   │   │       │   │   ├── audio.types.ts
+│   │   │       │   │   ├── video.types.ts
+│   │   │       │   │   ├── player.types.ts
+│   │   │       │   │   ├── effects.types.ts
+│   │   │       │   │   ├── settings.types.ts
+│   │   │       │   │   ├── global.d.ts
+│   │   │       │   │   └── index.ts
+│   │   │       │   │
+│   │   │       │   ├── utils/
+│   │   │       │   │   ├── audio/
+│   │   │       │   │   │   ├── formatters.ts
+│   │   │       │   │   │   ├── converters.ts
+│   │   │       │   │   │   └── analyzers.ts
+│   │   │       │   │   ├── video/
+│   │   │       │   │   │   ├── formatters.ts
+│   │   │       │   │   │   └── converters.ts
+│   │   │       │   │   ├── file/
+│   │   │       │   │   │   ├── validators.ts
+│   │   │       │   │   │   ├── formatters.ts
+│   │   │       │   │   │   └── parsers.ts
+│   │   │       │   │   ├── time/
+│   │   │       │   │   │   ├── formatters.ts
+│   │   │       │   │   │   └── converters.ts
+│   │   │       │   │   ├── string/
+│   │   │       │   │   │   ├── formatters.ts
+│   │   │       │   │   │   └── validators.ts
+│   │   │       │   │   ├── array/
+│   │   │       │   │   │   ├── helpers.ts
+│   │   │       │   │   │   └── sort.ts
+│   │   │       │   │   ├── object/
+│   │   │       │   │   │   └── helpers.ts
+│   │   │       │   │   ├── constants.ts
+│   │   │       │   │   ├── helpers.ts
+│   │   │       │   │   ├── validators.ts
+│   │   │       │   │   ├── formatters.ts
+│   │   │       │   │   └── index.ts
+│   │   │       │   │
+│   │   │       │   ├── workers/
+│   │   │       │   │   ├── audio-processor.worker.ts
+│   │   │       │   │   ├── video-processor.worker.ts
+│   │   │       │   │   ├── file-scanner.worker.ts
+│   │   │       │   │   └── metadata-parser.worker.ts
+│   │   │       │   │
+│   │   │       │   ├── config/
+│   │   │       │   │   ├── app.config.ts
+│   │   │       │   │   ├── player.config.ts
+│   │   │       │   │   ├── audio.config.ts
+│   │   │       │   │   ├── video.config.ts
+│   │   │       │   │   ├── routes.config.ts
+│   │   │       │   │   └── theme.config.ts
+│   │   │       │   │
+│   │   │       │   ├── contexts/
+│   │   │       │   │   ├── ThemeContext.tsx
+│   │   │       │   │   ├── PlayerContext.tsx
+│   │   │       │   │   ├── AudioContext.tsx
+│   │   │       │   │   └── SettingsContext.tsx
+│   │   │       │   │
+│   │   │       │   ├── lib/
+│   │   │       │   │   ├── ffmpeg/
+│   │   │       │   │   │   └── ffmpeg-wrapper.ts
+│   │   │       │   │   ├── wasm/
+│   │   │       │   │   │   ├── audio-processor.wasm
+│   │   │       │   │   │   └── video-decoder.wasm
+│   │   │       │   │   └── plugins/
+│   │   │       │   │       ├── plugin-loader.ts
+│   │   │       │   │       └── plugin-api.ts
+│   │   │       │   │
+│   │   │       │   ├── tests/
+│   │   │       │   │   ├── unit/
+│   │   │       │   │   │   ├── components/
+│   │   │       │   │   │   ├── hooks/
+│   │   │       │   │   │   ├── utils/
+│   │   │       │   │   │   └── services/
+│   │   │       │   │   ├── integration/
+│   │   │       │   │   ├── e2e/
+│   │   │       │   │   ├── mocks/
+│   │   │       │   │   ├── fixtures/
+│   │   │       │   │   └── setup.ts
+│   │   │       │   │
+│   │   │       │   ├── App.tsx
+│   │   │       │   ├── main.tsx
+│   │   │       │   └── vite-env.d.ts
+│   │   │       │
+│   │   │       ├── index.html
+│   │   │       └── package.json
+│   │   │
+│   │   ├── resources/
+│   │   │   ├── icons/
+│   │   │   └── build/
+│   │   │
+│   │   ├── .env.development
+│   │   ├── .env.production
+│   │   ├── .eslintrc.js
+│   │   ├── .prettierrc
+│   │   ├── electron-builder.json
+│   │   ├── package.json
+│   │   ├── postcss.config.js
+│   │   ├── tailwind.config.js
+│   │   ├── tsconfig.json
+│   │   ├── tsconfig.node.json
+│   │   └── vite.config.ts
+│   │
+│   ├── web/                                        # Web PWA Version
+│   │   ├── public/
+│   │   │   ├── assets/
+│   │   │   ├── icons/
+│   │   │   ├── locales/
+│   │   │   ├── favicon.ico
+│   │   │   ├── manifest.json
+│   │   │   ├── robots.txt
+│   │   │   └── service-worker.js
+│   │   │
+│   │   ├── src/
+│   │   │   └── [Similar structure to desktop/src/renderer/src]
+│   │   │
+│   │   ├── .env.development
+│   │   ├── .env.production
+│   │   ├── .eslintrc.js
+│   │   ├── .prettierrc
+│   │   ├── index.html
+│   │   ├── package.json
+│   │   ├── postcss.config.js
+│   │   ├── tailwind.config.js
+│   │   ├── tsconfig.json
+│   │   └── vite.config.ts
+│   │
+│   └── mobile/                                     # React Native App
+│       ├── android/
+│       │   ├── app/
+│       │   ├── gradle/
+│       │   ├── build.gradle
+│       │   └── settings.gradle
+│       │
+│       ├── ios/
+│       │   ├── FXMediaPro/
+│       │   ├── FXMediaPro.xcodeproj/
+│       │   └── Podfile
+│       │
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   │   ├── audio/
+│       │   │   ├── video/
+│       │   │   ├── player/
+│       │   │   └── common/
+│       │   ├── screens/
+│       │   │   ├── Home/
+│       │   │   ├── Player/
+│       │   │   ├── Library/
+│       │   │   ├── Playlists/
+│       │   │   └── Settings/
+│       │   ├── navigation/
+│       │   │   ├── AppNavigator.tsx
+│       │   │   ├── TabNavigator.tsx
+│       │   │   └── StackNavigator.tsx
+│       │   ├── services/
+│       │   ├── store/
+│       │   ├── hooks/
+│       │   ├── utils/
+│       │   ├── types/
+│       │   ├── styles/
+│       │   └── App.tsx
+│       │
+│       ├── .env.development
+│       ├── .env.production
+│       ├── .eslintrc.js
+│       ├── .prettierrc
+│       ├── app.json
+│       ├── babel.config.js
+│       ├── index.js
+│       ├── metro.config.js
+│       ├── package.json
+│       └── tsconfig.json
+│
+├── packages/
+│   ├── core/                                       # Shared business logic
+│   │   ├── src/
+│   │   │   ├── audio/
+│   │   │   │   ├── engines/
+│   │   │   │   │   ├── WebAudioEngine.ts
+│   │   │   │   │   └── NativeAudioEngine.ts
+│   │   │   │   ├── processors/
+│   │   │   │   │   ├── AudioProcessor.ts
+│   │   │   │   │   ├── SpectrumAnalyzer.ts
+│   │   │   │   │   └── WaveformGenerator.ts
+│   │   │   │   ├── effects/
+│   │   │   │   │   ├── Equalizer.ts
+│   │   │   │   │   ├── Reverb.ts
+│   │   │   │   │   ├── Delay.ts
+│   │   │   │   │   ├── Compressor.ts
+│   │   │   │   │   ├── Distortion.ts
+│   │   │   │   │   └── Filter.ts
+│   │   │   │   ├── analyzers/
+│   │   │   │   │   ├── FrequencyAnalyzer.ts
+│   │   │   │   │   ├── BPMDetector.ts
+│   │   │   │   │   └── KeyDetector.ts
+│   │   │   │   ├── codecs/
+│   │   │   │   │   ├── MP3Decoder.ts
+│   │   │   │   │   ├── FLACDecoder.ts
+│   │   │   │   │   ├── WAVDecoder.ts
+│   │   │   │   │   └── AACDecoder.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   ├── video/
+│   │   │   │   ├── decoders/
+│   │   │   │   │   ├── H264Decoder.ts
+│   │   │   │   │   ├── H265Decoder.ts
+│   │   │   │   │   └── VP9Decoder.ts
+│   │   │   │   ├── encoders/
+│   │   │   │   │   ├── H264Encoder.ts
+│   │   │   │   │   └── VP9Encoder.ts
+│   │   │   │   ├── processors/
+│   │   │   │   │   ├── VideoProcessor.ts
+│   │   │   │   │   └── FrameProcessor.ts
+│   │   │   │   ├── filters/
+│   │   │   │   │   ├── ColorCorrection.ts
+│   │   │   │   │   ├── Brightness.ts
+│   │   │   │   │   ├── Contrast.ts
+│   │   │   │   │   ├── Saturation.ts
+│   │   │   │   │   └── Blur.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   ├── metadata/
+│   │   │   │   ├── parsers/
+│   │   │   │   │   ├── ID3Parser.ts
+│   │   │   │   │   ├── VorbisParser.ts
+│   │   │   │   │   └── MP4Parser.ts
+│   │   │   │   ├── writers/
+│   │   │   │   │   ├── ID3Writer.ts
+│   │   │   │   │   └── VorbisWriter.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   ├── playlist/
+│   │   │   │   ├── PlaylistManager.ts
+│   │   │   │   ├── QueueManager.ts
+│   │   │   │   ├── ShuffleAlgorithm.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   ├── storage/
+│   │   │   │   ├── Database.ts
+│   │   │   │   ├── Cache.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   ├── sync/
+│   │   │   │   ├── SyncEngine.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   ├── types/
+│   │   │   │   ├── audio.types.ts
+│   │   │   │   ├── video.types.ts
+│   │   │   │   ├── media.types.ts
+│   │   │   │   ├── playlist.types.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   ├── utils/
+│   │   │   │   ├── formatters.ts
+│   │   │   │   ├── validators.ts
+│   │   │   │   ├── converters.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── tests/
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── README.md
+│   │
+│   ├── ui/                                         # Shared UI components
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   │   ├── Button/
+│   │   │   │   │   ├── Button.tsx
+│   │   │   │   │   ├── Button.stories.tsx
+│   │   │   │   │   ├── Button.test.tsx
+│   │   │   │   │   ├── Button.module.scss
+│   │   │   │   │   └── index.ts
+│   │   │   │   ├── Input/
+│   │   │   │   ├── Modal/
+│   │   │   │   ├── Card/
+│   │   │   │   └── [other components]
+│   │   │   │
+│   │   │   ├── hooks/
+│   │   │   │   ├── useMediaQuery.ts
+│   │   │   │   ├── useTheme.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   ├── styles/
+│   │   │   │   ├── variables.scss
+│   │   │   │   ├── mixins.scss
+│   │   │   │   └── global.scss
+│   │   │   │
+│   │   │   ├── types/
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── .storybook/
+│   │   │   ├── main.js
+│   │   │   └── preview.js
+│   │   │
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── README.md
+│   │
+│   ├── utils/                                      # Shared utilities
+│   │   ├── src/
+│   │   │   ├── audio/
+│   │   │   ├── video/
+│   │   │   ├── file/
+│   │   │   ├── string/
+│   │   │   ├── date/
+│   │   │   └── index.ts
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   │
+│   ├── types/                                      # Shared TypeScript types
+│   │   ├── src/
+│   │   │   ├── models/
+│   │   │   ├── api/
+│   │   │   └── index.ts
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   │
+│   └── config/                                     # Shared configurations
+│       ├── eslint/
+│       │   ├── base.js
+│       │   ├── react.js
+│       │   └── node.js
+│       ├── typescript/
+│       │   ├── base.json
+│       │   ├── react.json
+│       │   └── node.json
+│       ├── vite/
+│       │   ├── base.ts
+│       │   └── plugins.ts
+│       ├── jest/
+│       │   └── jest.config.js
+│       └── prettier/
+│           └── .prettierrc.js
+│
+├── services/                                       # Backend services
+│   ├── api/                                       # Main API service
+│   │   ├── src/
+│   │   │   ├── controllers/
+│   │   │   │   ├── auth.controller.ts
+│   │   │   │   ├── media.controller.ts
+│   │   │   │   ├── playlist.controller.ts
+│   │   │   │   └── user.controller.ts
+│   │   │   ├── middleware/
+│   │   │   │   ├── auth.middleware.ts
+│   │   │   │   ├── error.middleware.ts
+│   │   │   │   ├── logger.middleware.ts
+│   │   │   │   └── validation.middleware.ts
+│   │   │   ├── routes/
+│   │   │   │   ├── auth.routes.ts
+│   │   │   │   ├── media.routes.ts
+│   │   │   │   ├── playlist.routes.ts
+│   │   │   │   └── index.ts
+│   │   │   ├── models/
+│   │   │   │   ├── User.ts
+│   │   │   │   ├── Media.ts
+│   │   │   │   └── Playlist.ts
+│   │   │   ├── services/
+│   │   │   │   ├── auth.service.ts
+│   │   │   │   ├── media.service.ts
+│   │   │   │   └── playlist.service.ts
+│   │   │   ├── utils/
+│   │   │   ├── config/
+│   │   │   │   └── database.ts
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── tests/
+│   │   ├── .env.development
+│   │   ├── .env.production
+│   │   ├── Dockerfile
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   │
+│   ├── media-processor/                           # Media processing service
+│   │   ├── src/
+│   │   │   ├── processors/
+│   │   │   │   ├── audio.processor.ts
+│   │   │   │   ├── video.processor.ts
+│   │   │   │   └── thumbnail.processor.ts
+│   │   │   ├── queue/
+│   │   │   │   └── job.handler.ts
+│   │   │   ├── workers/
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── Dockerfile
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   │
+│   ├── streaming/                                 # Streaming service
+│   │   ├── src/
+│   │   │   ├── hls/
+│   │   │   ├── dash/
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── Dockerfile
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   │
+│   └── analytics/                                 # Analytics service
+│       ├── src/
+│       │   └── index.ts
+│       │
+│       ├── Dockerfile
+│       ├── package.json
+│       └── tsconfig.json
+│
+├── scripts/                                       # Build & deployment scripts
+│   ├── build/
+│   │   ├── build-desktop.sh
+│   │   ├── build-web.sh
+│   │   └── build-mobile.sh
+│   ├── dev/
+│   │   ├── dev-desktop.sh
+│   │   ├── dev-web.sh
+│   │   └── dev-all.sh
+│   ├── deploy/
+│   │   ├── deploy-web.sh
+│   │   └── deploy-services.sh
+│   ├── test/
+│   │   ├── test-unit.sh
+│   │   ├── test-e2e.sh
+│   │   └── test-all.sh
+│   ├── release/
+│   │   ├── release-desktop.sh
+│   │   └── release-mobile.sh
+│   └── utils/
+│       ├── clean.sh
+│       └── setup.sh
+│
+├── docs/                                          # Documentation
+│   ├── api/
+│   │   ├── README.md
+│   │   └── endpoints.md
+│   ├── architecture/
+│   │   ├── overview.md
+│   │   ├── audio-engine.md
+│   │   └── video-processing.md
+│   ├── guides/
+│   │   ├── getting-started.md
+│   │   ├── development.md
+│   │   ├── deployment.md
+│   │   └── contributing.md
+│   ├── features/
+│   │   ├── audio-player.md
+│   │   ├── video-player.md
+│   │   ├── studio.md
+│   │   └── effects.md
+│   ├── plugins/
+│   │   ├── plugin-api.md
+│   │   └── creating-plugins.md
+│   ├── README.md
+│   ├── CHANGELOG.md
+│   └── FAQ.md
+│
+├── .github/
+│   ├── workflows/
+│   │   ├── ci.yml
+│   │   ├── cd.yml
+│   │   ├── release-desktop.yml
+│   │   ├── release-web.yml
+│   │   ├── release-mobile.yml
+│   │   └── test.yml
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   ├── feature_request.md
+│   │   └── custom.md
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── CODEOWNERS
+│
+├── .vscode/
+│   ├── extensions.json
+│   ├── settings.json
+│   ├── launch.json
+│   └── tasks.json
+│
+├── .husky/
+│   ├── pre-commit
+│   ├── pre-push
+│   └── commit-msg
+│
+├── docker/
+│   ├── development/
+│   │   ├── docker-compose.yml
+│   │   └── Dockerfile.dev
+│   └── production/
+│       ├── docker-compose.yml
+│       └── nginx.conf
+│
+├── infrastructure/
+│   ├── terraform/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   └── kubernetes/
+│       ├── deployments/
+│       ├── services/
+│       └── ingress/
+│
+├── .editorconfig
+├── .env.example
+├── .eslintignore
+├── .eslintrc.js
+├── .gitattributes
+├── .gitignore
+├── .npmrc
+├── .nvmrc
+├── .prettierignore
+├── .prettierrc
+├── docker-compose.yml
+├── jest.config.js
+├── lerna.json
+├── LICENSE
+├── nx.json
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── README.md
+├── renovate.json
+├── tsconfig.base.json
+├── tsconfig.json
+└── turbo.json
